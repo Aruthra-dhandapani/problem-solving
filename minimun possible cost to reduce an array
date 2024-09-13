@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj=new Scanner(System.in);
+		int n=obj.nextInt();
+		PriorityQueue<Integer> pq=new PriorityQueue<>();
+		List<Integer> arr=new ArrayList<>();
+		for(int i=0;i<n;i++)
+		{
+		    int num=obj.nextInt();
+		    arr.add(num);
+		}
+		for(int i=0;i<n;i++)
+		{
+		    pq.add(arr.get(i));
+		}
+		int sum=0;
+		while(pq.size()>1)
+		{
+		    sum=0;
+		    int a=pq.poll();
+		    int b=pq.poll();
+		    sum=a+b;
+		    pq.add(sum);
+		    
+		}
+		System.out.println(sum);
+		
+		
+	}
+}
