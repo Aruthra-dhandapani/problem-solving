@@ -1,0 +1,39 @@
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj=new Scanner(System.in);
+		int n=obj.nextInt();
+		int num=obj.nextInt();
+		HashMap<Integer,Character> map=new HashMap<>();
+		char j=48;
+		for(int i=0;i<=9;i++)
+		{
+		  map.put(i,j);
+		  j++;
+		}
+		char c='a';
+		for(int i=10;i<=35;i++)
+		{
+		    map.put(i,c);
+		    c++;
+		}
+		String str="";
+		while(num!=0)
+		{
+		    int rem=num%n;
+		    str+=map.get(rem);
+		    num=num/n;
+		}
+		String nstr="";
+		for(int i=str.length()-1;i>=0;i--)
+		{
+		    char ch=str.charAt(i);
+		    nstr+=ch;
+		}
+		
+		System.out.println(nstr);
+		
+	}
+}
