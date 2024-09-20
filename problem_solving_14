@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj=new Scanner(System.in);
+		int n=obj.nextInt();
+		int[] arr=new int[n];
+		for(int i=0;i<n;i++)
+		{
+		    arr[i]=obj.nextInt();
+		}
+		if(n==0 || n<=3)
+		System.out.println(0);
+		List<Integer> even=new ArrayList<>();
+		List<Integer> odd=new ArrayList<>();
+		for(int i=0;i<n;i++)
+		{
+		    if(i%2==0)
+		    even.add(arr[i]);
+		    else
+		    odd.add(arr[i]);
+		}
+		int len=even.size();
+		Collections.sort(odd);
+		Collections.sort(even);
+		System.out.println(even);
+		System.out.println(odd);
+		int ans=odd.get(1)+even.get(len-2);
+		System.out.println(ans);
+	}
+}
